@@ -2,7 +2,8 @@
   position: relative;
   display: inline-block;
   padding: 4px 8px;
-  margin-top: 32px;
+  margin-top: 14px;
+  margin-bottom: 18px;
   border: 1px solid;
   border-radius: 8px;
 }
