@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import '../css/flatpickr-add.css';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -16,7 +17,6 @@ const options = {
 
 flatpickr('#datetime-picker', options);
 
-// Отримуємо посилання на елементи
 const refs = {
   input: document.querySelector('#datetime-picker'),
   startBtn: document.querySelector('[data-start]'),
@@ -26,27 +26,13 @@ const refs = {
   secondsEl: document.querySelector('[data-seconds]'),
 };
 
-// Початково кнопка неактивна
 refs.startBtn.disabled = true;
 
 let userSelectedDate = null;
 let timerId = null;
 
-// Перевизначаємо опцію onClose після flatpickr ініціалізації
 options.onClose = function (selectedDates) {
   const pickedDate = selectedDates[0];
-
-  if (!pickedDate) {
-    userSelectedDate = null;
-    refs.startBtn.disabled = true;
-    iziToast.info({
-      title: 'Info',
-      message: 'Date unchosen',
-      position: 'topRight',
-      timeout: 2000,
-    });
-    return;
-  }
 
   if (pickedDate.getTime() <= Date.now()) {
     userSelectedDate = null;
@@ -62,13 +48,6 @@ options.onClose = function (selectedDates) {
 
   userSelectedDate = pickedDate;
   refs.startBtn.disabled = false;
-
-  iziToast.success({
-    title: 'OK',
-    message: 'Right date selected',
-    position: 'topRight',
-    timeout: 1500,
-  });
 };
 
 // Тепер заново ініціалізуємо flatpickr з оновленим onClose

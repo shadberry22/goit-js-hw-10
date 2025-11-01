@@ -15,7 +15,7 @@
 }
 
 #datetime-picker {
-  width: 272px;
+  width: 280px;
   height: 40px;
   padding: 8px 16px;
 
@@ -94,3 +94,5 @@ button[data-start]:disabled {
   text-transform: uppercase;
   color: #2e2f42;
 }
+
+
