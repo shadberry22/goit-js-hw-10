@@ -4,7 +4,6 @@
   align-items: flex-start;
   margin-left: 156px;
   margin-top: 36px;
-  background-color: #fff;
 }
 
 .timer-controls {
@@ -94,5 +93,3 @@ button[data-start]:disabled {
   text-transform: uppercase;
   color: #2e2f42;
 }
-
-
