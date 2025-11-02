@@ -50,10 +50,8 @@ options.onClose = function (selectedDates) {
   refs.startBtn.disabled = false;
 };
 
-// Тепер заново ініціалізуємо flatpickr з оновленим onClose
 flatpickr('#datetime-picker', options);
 
-// Клік по Start
 refs.startBtn.addEventListener('click', onStart);
 
 function onStart() {
